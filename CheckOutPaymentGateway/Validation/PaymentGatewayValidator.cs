@@ -31,12 +31,6 @@ namespace CheckOutPaymentGateway.Validation
                 logger.Error("Card number is invalid");
                 return false;
             }
-            
-            if (paymentModel.ExpiryDate < DateTime.Now)
-            {
-                logger.Error("Expiry date cannot be less than today's date");
-                return false;
-            }
 
             if (!isValidExpiryDate(paymentModel.ExpiryDate.ToString()))
             {
